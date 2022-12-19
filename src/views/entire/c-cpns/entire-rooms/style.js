@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const RoomWrapper = styled.div`
   padding: 30px 20px;
+  margin-top: 128px;
   .list{
     display: flex;
     flex-wrap: wrap;

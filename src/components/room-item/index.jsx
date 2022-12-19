@@ -25,13 +25,16 @@ const RoomItem = memo(({itemData, width = "25%",itemCLick}) => {
 
     }
     const handleDetail =()=>{
+        console.log('222')
     if(itemCLick) itemCLick(itemData)
     }
     return (
         <RoomItemWarpp color={itemData?.verify_info?.text_color || "#39576a"} width={width}  >
             <div className="inner">
 
-                {itemData.picture_urls ? (<div className="swiper">
+                {
+                    itemData.picture_urls ? (
+                    <div className="swiper">
                     <div className="control">
                         <div className="btn left" onClick={handleLeftClick}>
                             <IconArrowLeft width="30" height="30"/>
@@ -68,7 +71,8 @@ const RoomItem = memo(({itemData, width = "25%",itemCLick}) => {
 
                 </div>) : <div className="cover">
                     <img src={itemData.picture_url} alt=""/>
-                </div>}
+                </div>
+                }
 
                 <div className="desc">
                     {

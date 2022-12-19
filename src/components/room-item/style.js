@@ -17,7 +17,7 @@ export const RoomItemWarpp = styled.div`
     .control{
       pointer-events: none  ;
       position: absolute;
-      z-index: 1;
+      z-index: 2;
       left: 0;
       right: 0;
       top: 0;

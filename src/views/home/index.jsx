@@ -8,12 +8,16 @@ import HomeSection from "@/views/home/c-cpns/home-section";
 import HomeLongfor from "@/views/home/c-cpns/home-longfor";
 import HomeBannersection from "@/views/home/c-cpns/home-bannersection";
 
+import AppHeader from "@/components/app-header";
+import {changeHeaderConfig} from "@/store/modules/mainSlice";
+
 
 const home = memo(() => {
 
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(fetchHomeData())
+        dispatch(changeHeaderConfig({isFixed: true,topAlpha: true}))
     }, [dispatch])
     /*从redux中获取*/
     const {goodPriceInfo, highScoreInfo, DiscountInfo,RecommendInfo,LongforInfo,PlusInfo} = useSelector((state) => ({
@@ -28,6 +32,7 @@ const home = memo(() => {
 
     return (
         <HomeWrapper>
+            {/*<AppHeader/>*/}
             <HomeBanner/>
             <div className="content">
                 {Object.keys(DiscountInfo).length && <Hometabsection infoData={DiscountInfo}/>}

@@ -10,7 +10,6 @@ const Indicator = memo((props) => {
         const selectItemEl = contentRef.current.children[selectIndex]
         const offsetLeft = selectItemEl.offsetLeft
         const width = selectItemEl.clientWidth
-        // console.log(offsetLeft,width)
         //content的数据
         const ContainerWidth = contentRef.current.clientWidth
         let totaldistance = contentRef.current.scrollWidth - ContainerWidth
